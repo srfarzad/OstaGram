@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="app_title">20sp</dimen>
+    <dimen name="story_height">72dp</dimen>
+</resources>

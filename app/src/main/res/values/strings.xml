@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OstaGram</string>
+    <string name="ostagram">Ostagram</string>
+    <string name="home">home</string>
+    <string name="search">Search</string>
+    <string name="add_post">Add Post</string>
+    <string name="favorite">Favorite</string>
+    <string name="profile">Profile</string>
+</resources>
