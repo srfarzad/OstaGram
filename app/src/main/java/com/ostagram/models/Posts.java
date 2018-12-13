@@ -9,6 +9,7 @@ public class Posts {
     private String imageProfile;
     private String user_id;
     private String likes;
+    private String images;
     private String description;
     private String comments;
 
@@ -67,5 +68,13 @@ public class Posts {
 
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
     }
 }
