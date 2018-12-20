@@ -8,7 +8,8 @@ public class ApiClient {
 
     public static Retrofit retrofit = null;
 
-    public static String BaseURL= "http://androidsupport.ir/picpic/";
+   // public static String BaseURL= "http://androidsupport.ir/picpic/";
+    public static String BaseURL= "http://androidframework.com/picpic/";
 
 
     public static Retrofit getClient(){

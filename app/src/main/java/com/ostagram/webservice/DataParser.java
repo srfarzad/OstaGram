@@ -36,4 +36,16 @@ public class DataParser {
 
     }
 
+
+    public static String parseUser(String response) throws Exception{
+
+
+        JSONObject jsonObject = new JSONObject(response);
+
+        String code = jsonObject.getString("code");
+
+        return code;
+
+    }
+
 }

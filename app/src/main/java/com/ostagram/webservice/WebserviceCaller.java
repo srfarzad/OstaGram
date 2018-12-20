@@ -4,6 +4,7 @@ package com.ostagram.webservice;
 import com.ostagram.models.IMessageListener;
 import com.ostagram.models.Posts;
 
+import java.io.IOException;
 import java.util.List;
 
 import okhttp3.ResponseBody;
@@ -51,4 +52,26 @@ public class WebserviceCaller {
             }
         });
     }
+
+
+
+    public void login(String username, String password, final IMessageListener iMessageListener) {
+        Call<ResponseBody> getData = apiInterface.login(username, password);
+        getData.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    iMessageListener.onSuccessObject(response.body().string());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                iMessageListener.onError(t.getMessage().toString());
+            }
+        });
+    }
+
 }
