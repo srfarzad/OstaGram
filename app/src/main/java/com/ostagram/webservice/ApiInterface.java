@@ -30,13 +30,13 @@ public interface ApiInterface {
 
     @POST("login.php")
     @FormUrlEncoded
-    Call<ResponseBody>  login(@Field("username") int username , @Field("password") int password );
+    Call<ResponseBody>  login(@Field("username") String username , @Field("password") String password );
 
 
 
     @POST("register.php")
     @FormUrlEncoded
-    Call<ResponseBody>  register(@Field("username") int username , @Field("password") int password );
+    Call<ResponseBody>  register(@Field("username") String username , @Field("password") String password);
 
 
 

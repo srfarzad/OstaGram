@@ -30,19 +30,19 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         webserviceCaller = new WebserviceCaller();
 
-
         webserviceCaller.getPosts(0, 10, new IMessageListener() {
             @Override
+            public void onSuccessObject(Object response) {
+
+            }
+
+            @Override
             public void onSuccess(List response) {
-                Log.e("","");
-
-
                 PostsAdapter postsAdapter = new PostsAdapter(getApplicationContext(),response);
                 recycer_posts.setAdapter(postsAdapter);
 
                 recycer_posts.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                         LinearLayoutManager.VERTICAL,false));
-
             }
 
             @Override
@@ -50,7 +50,5 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("","");
             }
         });
-
-
     }
 }

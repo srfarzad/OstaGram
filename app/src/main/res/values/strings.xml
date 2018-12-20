@@ -6,4 +6,6 @@
     <string name="add_post">Add Post</string>
     <string name="favorite">Favorite</string>
     <string name="profile">Profile</string>
+    <string name="password">password</string>
+    <string name="username">username</string>
 </resources>
