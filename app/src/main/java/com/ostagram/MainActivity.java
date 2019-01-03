@@ -1,5 +1,6 @@
 package com.ostagram;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,12 +9,14 @@ import android.util.Log;
 
 import com.ostagram.adapter.PostsAdapter;
 import com.ostagram.models.IMessageListener;
+import com.ostagram.service.PlayService;
 import com.ostagram.webservice.WebserviceCaller;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import co.ronash.pushe.Pushe;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         webserviceCaller = new WebserviceCaller();
+        Pushe.initialize(this,true);
+
+
+
+        startService(new Intent(getApplicationContext(), PlayService.class));
+
 
         webserviceCaller.getPosts(0, 10, new IMessageListener() {
             @Override
@@ -50,5 +59,15 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("","");
             }
         });
+
+
+        Intent intent = new Intent();
+        intent.setClassName("com.ostagramsecond", "com.ostagramsecond.Reciver");
+        intent.setAction("com.ostagramsecond.Reciver");
+        intent.putExtra("Id",1);
+        intent.putExtra("Data","{id:5}");
+        sendBroadcast(intent);
+
+
     }
 }

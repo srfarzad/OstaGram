@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "629831623062",
+    "firebase_url": "https://ostagram-b1741.firebaseio.com",
+    "project_id": "ostagram-b1741",
+    "storage_bucket": "ostagram-b1741.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629831623062:android:ae59fc2877638a7a",
+        "android_client_info": {
+          "package_name": "com.ostagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629831623062-1qihgot3v3pggtqkuinf5uspk7ulihp2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ostagram",
+            "certificate_hash": "8e0f8fa2bf31cb50208b48d008d47fb8be8f7e64"
+          }
+        },
+        {
+          "client_id": "629831623062-6l85ujrh27t0bglfp07nsc1oubokekq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKC66Z1GX5-DX2rODsE3H43dgycTtz2_Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629831623062-6l85ujrh27t0bglfp07nsc1oubokekq1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

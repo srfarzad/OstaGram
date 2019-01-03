@@ -43,4 +43,14 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation project(':viewpagerIndicator')
     implementation project(':ostaframework')
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+    //implementation 'com.onesignal:OneSignal:[3.99.99]'
+    implementation 'co.ronash.android:pushe-base:1.4.1'
+
+
 }
+
+
+
+apply plugin: 'com.google.gms.google-services'
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
