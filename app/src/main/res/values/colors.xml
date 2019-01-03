@@ -8,4 +8,8 @@
 
     <color name="black">#000000</color>
 
+    <color name="LoginSignup2colorAccent">#fe5824</color>
+    <color name="loginSignup2InputBg">#f1f5f8</color>
+
+    <color name="orange">#fe5824</color>
 </resources>

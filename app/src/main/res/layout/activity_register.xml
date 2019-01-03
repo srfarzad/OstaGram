@@ -7,34 +7,61 @@
     android:orientation="vertical"
     tools:context=".activity.RegisterActivity">
 
-
-
-    <EditText
-        android:id="@+id/txtUsername"
-        android:hint="@string/username"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_marginLeft="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_8">
 
-    <EditText
-        android:id="@+id/txtPassword"
-        android:hint="@string/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_8">
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:text="Register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/txtUsername"
+                style="@style/LoginSignUp8Input"
+                android:hint="Username" />
 
+            <EditText
+                android:id="@+id/txtPassword"
+                style="@style/LoginSignUp8Input"
+                android:hint="Password"
+                android:inputType="textPassword" />
 
+            <Button
+                android:id="@+id/btn_login"
+                style="@style/ButtonOrange"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_marginTop="30dp"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
 
+            <Button
+                android:id="@+id/btnRegister"
+                style="@style/ButtonOrange"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="Create An Account"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
 
-    <Button
-        android:id="@+id/btn_login"
-        android:text="Login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
 
 
 
