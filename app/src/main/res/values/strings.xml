@@ -8,4 +8,11 @@
     <string name="profile">Profile</string>
     <string name="password">password</string>
     <string name="username">username</string>
+    <string name="create_account">ایجاد حساب کاربری</string>
+    <string name="ورود">login</string>
+
+    <string name="fill_username">لطفا نام کاربری را وارد نمایید</string>
+    <string name="fill_password">لطفا رمز را وارد نمایید</string>
+    <string name="login_error">خطا در وورد</string>
+
 </resources>

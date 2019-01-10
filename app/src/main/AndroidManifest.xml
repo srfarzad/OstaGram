@@ -3,25 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ostagram">
 
+    <uses-sdk tools:overrideLibrary="co.ronash.pushe" />
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-
-
-    <uses-sdk
-        tools:overrideLibrary="co.ronash.pushe" />
     <permission
         android:name="com.ostagram.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission
-        android:name="com.ostagram.permission.C2D_MESSAGE" />
-    <uses-permission
-        android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="com.ostagram.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- Optional permissions -->
-    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -32,37 +28,23 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity android:name=".activity.RegisterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <receiver android:name=".service.BootableApp">
-
             <intent-filter>
-
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-
         </receiver>
 
-        <service android:name=".service.PlayService"/>
-
+        <service android:name=".service.PlayService" />
         <service android:name=".service.OstaService">
-
             <intent-filter>
-
-                <action android:name="com.ostagram.OstaGramService"/>
-
+                <action android:name="com.ostagram.OstaGramService" />
             </intent-filter>
-
         </service>
 
-
-
-        <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver" >
+        <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_REPLACED" />
 
@@ -71,24 +53,34 @@
                     android:scheme="package" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
             android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
                 <category android:name="com.ostagram" />
             </intent-filter>
         </receiver>
 
-        <meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_308921679544"/>
-        <meta-data android:name="co.ronash.pushe.cr" android:value="Tm9uZQ=="/>
+        <meta-data
+            android:name="co.ronash.pushe.token"
+            android:value="PUSHE_308921679544" />
+        <meta-data
+            android:name="co.ronash.pushe.cr"
+            android:value="Tm9uZQ==" />
 
+        <activity android:name=".ui.login.LoginActivity">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>
