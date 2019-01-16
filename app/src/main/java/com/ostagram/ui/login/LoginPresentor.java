@@ -13,7 +13,6 @@ public class LoginPresentor implements  LoginInteractor.OnLoginFinishedListener 
    public void validateLogin(String username , String password){
 
        view.showProgress();
-
        loginInteractor.login(username ,password , this );
 
    }

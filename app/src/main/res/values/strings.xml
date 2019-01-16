@@ -15,4 +15,6 @@
     <string name="fill_password">لطفا رمز را وارد نمایید</string>
     <string name="login_error">خطا در وورد</string>
 
+    <string name="error_server">SERVER ERROR</string>
+
 </resources>

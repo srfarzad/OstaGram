@@ -27,9 +27,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".activity.RegisterActivity">
-
-        </activity>
+        <activity android:name=".activity.RegisterActivity"></activity>
 
         <receiver android:name=".service.BootableApp">
             <intent-filter>
@@ -72,14 +70,12 @@
             android:name="co.ronash.pushe.cr"
             android:value="Tm9uZQ==" />
 
-        <activity android:name=".ui.login.LoginActivity">
-
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.Home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
