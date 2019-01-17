@@ -1,5 +1,7 @@
 package com.ostagram.ui.Home;
 
+import java.util.List;
+
 public class HomePresenter implements HomeInteractor.onHomeFinishedListener {
 
     HomeView view;
@@ -11,22 +13,31 @@ public class HomePresenter implements HomeInteractor.onHomeFinishedListener {
     }
 
 
+
+
     @Override
-    public void onSuccess(String response) {
+    public void onSuccessObject(Object response) {
         if (view != null) {
             view.hideProgress();
             view.showStories();
-            view.shoePosts();
+
         }
     }
 
     @Override
-    public void onError() {
+    public void onSuccess(List response) {
+        if (view != null) {
+            view.hideProgress();
+            view.showStories();
+            view.showPosts(response);
+        }
+    }
+
+    @Override
+    public void onError(String errorMessage) {
         if (view != null) {
             view.hideProgress();
             view.errorServer();
         }
     }
-
-
 }

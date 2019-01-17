@@ -7,6 +7,8 @@ import com.ostagram.models.Posts;
 import java.io.IOException;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -16,6 +18,7 @@ public class WebserviceCaller {
 
     ApiInterface apiInterface;
 
+    @Inject
     public WebserviceCaller(){
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
     }

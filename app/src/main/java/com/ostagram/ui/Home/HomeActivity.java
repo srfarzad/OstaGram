@@ -3,6 +3,7 @@ package com.ostagram.ui.Home;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -10,7 +11,11 @@ import android.widget.Toast;
 
 import com.ostaframework.ui.BaseActivity;
 import com.ostagram.R;
+import com.ostagram.adapter.PostsAdapter;
+import com.ostagram.models.Posts;
 import com.ostagram.webservice.WebserviceCaller;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.BindViews;
@@ -65,7 +70,14 @@ public class HomeActivity extends BaseActivity implements HomeView {
     }
 
     @Override
-    public void shoePosts() {
+    public void showPosts(List<Posts> posts) {
+
+
+        PostsAdapter postsAdapter = new PostsAdapter(getApplicationContext(),posts);
+        recycer_posts.setAdapter(postsAdapter);
+
+        recycer_posts.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
+                LinearLayoutManager.VERTICAL,false));
 
     }
 }

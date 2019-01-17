@@ -13,27 +13,31 @@ public class HomeInteractor {
 
     WebserviceCaller webserviceCaller;
 
-    public interface onHomeFinishedListener {
-        public void onSuccess(String response);
-        public void onError();
+    public interface onHomeFinishedListener<T> {
+        public void onSuccessObject(T response);
+
+        public void onSuccess(List<T> response);
+
+        public void onError(String errorMessage);
     }
 
     public void getStories() {
 
     }
 
-    public void getPosts() {
+    public void getPosts(int from , int to , onHomeFinishedListener onHomeFinishedListener) {
         webserviceCaller = new WebserviceCaller();
 
-        webserviceCaller.getPosts(0, 10, new IMessageListener() {
+        webserviceCaller.getPosts(from, to, new IMessageListener() {
             @Override
             public void onSuccessObject(Object response) {
-
+                onHomeFinishedListener.onSuccessObject(response);
             }
 
             @Override
             public void onSuccess(List response) {
 
+                onHomeFinishedListener.onSuccess(response);
                 /*
                 PostsAdapter postsAdapter = new PostsAdapter(getApplicationContext(),response);
                 recycer_posts.setAdapter(postsAdapter);
@@ -47,6 +51,7 @@ public class HomeInteractor {
             @Override
             public void onError(String errorMessage) {
                 Log.e("","");
+                onHomeFinishedListener.onError(errorMessage.toString()+"");
             }
         });
     }

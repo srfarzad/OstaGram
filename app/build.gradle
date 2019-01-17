@@ -47,7 +47,10 @@ dependencies {
     //implementation 'com.onesignal:OneSignal:[3.99.99]'
     implementation 'co.ronash.android:pushe-base:1.4.1'
 
-
+    implementation 'com.google.dagger:dagger:2.11'
+    implementation 'com.google.dagger:dagger-android:2.11'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.11'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
 }
 
 
