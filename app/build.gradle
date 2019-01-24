@@ -51,6 +51,8 @@ dependencies {
     implementation 'com.google.dagger:dagger-android:2.11'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.11'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    implementation 'com.airbnb.android:lottie:2.7.0'
+
 }
 
 

@@ -12,6 +12,8 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
 import com.ostaframework.ui.BaseActivity;
 import com.ostagram.MainActivity;
 import com.ostagram.R;
@@ -36,7 +38,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
     TextView link_create;
 
     @BindView(R.id.progress_bar)
-    ProgressBar progress_bar;
+    LottieAnimationView progress_bar;
 
     @BindView(R.id.rel_main)
     RelativeLayout rel_main;
@@ -85,6 +87,9 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     public void showProgress() {
         progress_bar.setVisibility(View.VISIBLE);
+        progress_bar.setRepeatCount(LottieDrawable.INFINITE);
+        progress_bar.playAnimation();
+        progress_bar.setSpeed(1);
     }
 
     @Override
