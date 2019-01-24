@@ -16,5 +16,6 @@
     <string name="login_error">خطا در وورد</string>
 
     <string name="error_server">SERVER ERROR</string>
+    <string name="ads">Ads</string>
 
 </resources>

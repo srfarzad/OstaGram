@@ -80,16 +80,36 @@
         </LinearLayout>
     </ScrollView>
 
-    <com.airbnb.lottie.LottieAnimationView
+  <!--  <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:lottie_fileName="circleloading.json"
         app:lottie_loop="true"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_centerInParent="true"
-        app:lottie_autoPlay="true" />
+        app:lottie_autoPlay="true" />-->
 
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_ads"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_ads"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/ads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 

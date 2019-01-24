@@ -18,8 +18,23 @@
     <!-- Optional permissions -->
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+     
+    <permission
+        android:name="com.ostagram.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+     
+        
+    <uses-permission android:name="com.ostagram.googlemapsv2.permission.MAPS_RECEIVE" />
 
     <application
+        android:name=".config.AppConfig"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,14 +42,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.login.LoginActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".activity.RegisterActivity"></activity>
+        <activity android:name=".activity.RegisterActivity" />
 
         <receiver android:name=".service.BootableApp">
             <intent-filter>
@@ -77,14 +91,24 @@
             android:name="co.ronash.pushe.cr"
             android:value="Tm9uZQ==" />
 
-        <!--
-                <activity android:name=".ui.login.LoginActivity" />
-        -->
-        <activity android:name=".ui.Home.HomeActivity"></activity>
-
+        <!-- <activity android:name=".ui.login.LoginActivity" /> -->
+        <activity android:name=".ui.Home.HomeActivity" />
         <activity android:name=".MainActivity" />
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="35b88ca0fec4da93b2a4a57e1e95ac469bfe5d3e" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
 
+        <activity android:name=".activity.AdsActivity" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyC2VzwSjIqSPt3QJXvW3EFXQ5sc149fO00" />
+
+        <activity android:name=".ui.map.MapActivity"></activity>
     </application>
 
 </manifest>

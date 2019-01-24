@@ -3,6 +3,7 @@ package com.ostagram;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,12 +18,14 @@ import com.ostagram.di.UserModule;
 import com.ostagram.models.IMessageListener;
 import com.ostagram.models.User;
 import com.ostagram.service.PlayService;
+import com.ostagram.ui.map.MapActivity;
 import com.ostagram.webservice.WebserviceCaller;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import co.ronash.pushe.Pushe;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,14 +36,16 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.recycer_posts)
     RecyclerView recycer_posts;
 
+    @BindView(R.id.img_map)
+    AppCompatImageView img_map;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         webserviceCaller = new WebserviceCaller();
-        Pushe.initialize(this,true);
-
+        Pushe.initialize(this, true);
 
 
         startService(new Intent(getApplicationContext(), PlayService.class));
@@ -54,16 +59,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onSuccess(List response) {
-                PostsAdapter postsAdapter = new PostsAdapter(getApplicationContext(),response);
+                PostsAdapter postsAdapter = new PostsAdapter(getApplicationContext(), response);
                 recycer_posts.setAdapter(postsAdapter);
 
                 recycer_posts.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
-                        LinearLayoutManager.VERTICAL,false));
+                        LinearLayoutManager.VERTICAL, false));
             }
 
             @Override
             public void onError(String errorMessage) {
-                Log.e("","");
+                Log.e("", "");
             }
         });
 
@@ -71,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClassName("com.ostagramsecond", "com.ostagramsecond.Reciver");
         intent.setAction("com.ostagramsecond.Reciver");
-        intent.putExtra("Id",1);
-        intent.putExtra("Data","{id:5}");
+        intent.putExtra("Id", 1);
+        intent.putExtra("Data", "{id:5}");
         sendBroadcast(intent);
 
 
@@ -82,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
         component.getUserContact().setUserEmail("Ali");
 
-        Toast.makeText(getApplicationContext(),component.getUserContact().getUserEmail(),
+        Toast.makeText(getApplicationContext(), component.getUserContact().getUserEmail(),
                 Toast.LENGTH_LONG).show();
 
 
@@ -93,4 +98,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @OnClick(R.id.img_map)
+    public void img_map_click() {
+
+        Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+        startActivity(intent);
+
+    }
+
+
 }

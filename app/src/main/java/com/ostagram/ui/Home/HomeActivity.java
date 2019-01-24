@@ -26,9 +26,9 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     WebserviceCaller webserviceCaller;
     HomePresenter homePresenter;
-
+/*
     @BindView(R.id.progress_bar)
-    RelativeLayout progress_bar;
+    RelativeLayout progress_bar;*/
 
     @BindView(R.id.recycer_posts)
     RecyclerView recycer_posts;
@@ -51,12 +51,12 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     @Override
     public void showProgress() {
-        progress_bar.setVisibility(View.VISIBLE);
+       // progress_bar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideProgress() {
-        progress_bar.setVisibility(View.INVISIBLE);
+       // progress_bar.setVisibility(View.INVISIBLE);
     }
 
     @Override
